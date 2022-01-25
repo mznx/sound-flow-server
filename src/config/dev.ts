@@ -1,5 +1,5 @@
 export default {
-  port: 7000,
+  port: 7001,
 
   clientURL: 'https://localhost:9000/',
 

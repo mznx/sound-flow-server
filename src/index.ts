@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors()).use((req, res, next) => {
   console.log('[Connect]');
-  console.log(' from: ', req.ip);
+  console.log(' from: ', req.get('X-Real-IP'));
   console.log(' path: ', req.path);
   console.log(' time: ', new Date().toISOString());
   next();

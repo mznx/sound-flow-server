@@ -40,7 +40,7 @@ const AuthController = {
           grant_type: 'authorization_code'
         },
         headers: {
-          'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+          'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
         },
         json: true
       };
@@ -66,7 +66,7 @@ const AuthController = {
     const authOptions = {
       url: config.spotifyAccountsAPI + 'api/token',
       headers: {
-        'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64'))
       },
       form: {
         grant_type: 'refresh_token',

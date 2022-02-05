@@ -47,10 +47,10 @@ const AuthController = {
 
       request.post(authOptions, function(error, response, body) {
         if (!error && response.statusCode === 200) {
-          const { access_token, refresh_token } = body;
+          const { access_token, refresh_token, expires_in } = body;
 
           res.redirect(config.clientURL + '#/callback?' + 
-            querystring.stringify({ access_token, refresh_token })
+            querystring.stringify({ access_token, refresh_token, expires_in })
           );
         } else {
           res.redirect(config.clientURL + '#/callback?' +
